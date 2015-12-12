@@ -1,12 +1,8 @@
 # Special configuration for localhost (no redirect to https)
 server {
     listen 80;
-    listen 443 ssl;
     server_name localhost maximus;
-    ssl_certificate /etc/ssl/certs/appraisers.voxtechnica.info.chained.crt;
-    ssl_certificate_key /etc/ssl/private/voxtechnica.key;
     root /var/www/appraisers;
-    index index.html;
 
     # Provide a health check
     location /status {
@@ -18,24 +14,8 @@ server {
         deny all;
     }
 
-    # Last try: redirect to index
+    # Last try: redirect a bare / to index.html
     location / {
-        # Provide CORS headers
-        if ($request_method = 'OPTIONS') {
-            add_header 'Access-Control-Allow-Origin' '*';
-            add_header 'Access-Control-Allow-Credentials' 'true';
-            add_header 'Access-Control-Allow-Methods' 'GET, PUT, POST, DELETE, OPTIONS';
-            add_header 'Access-Control-Allow-Headers' '*';
-            add_header 'Access-Control-Max-Age' 3600; # 1 hour
-            add_header 'Content-Type' 'text/plain charset=UTF-8';
-            add_header 'Content-Length' 0;
-            return 204;
-        }
-        add_header 'Access-Control-Allow-Origin' '*';
-        add_header 'Access-Control-Allow-Credentials' 'true';
-        add_header 'Access-Control-Allow-Methods' 'GET, PUT, POST, DELETE, OPTIONS';
-        add_header 'Access-Control-Allow-Headers' '*';
-        # Redirect a bare / to index.html
         index index.html;
     }
 
@@ -46,149 +26,42 @@ server {
         proxy_redirect off;
     }
 
-    # HTML files get CORS headers and no-cache
-    location ~* \.html$ {
-        if ($request_method = 'OPTIONS') {
-            add_header 'Access-Control-Allow-Origin' '*';
-            add_header 'Access-Control-Allow-Credentials' 'true';
-            add_header 'Access-Control-Allow-Methods' 'GET, PUT, POST, DELETE, OPTIONS';
-            add_header 'Access-Control-Allow-Headers' '*';
-            add_header 'Access-Control-Max-Age' 3600; # 1 hour
-            add_header 'Content-Type' 'text/plain charset=UTF-8';
-            add_header 'Content-Length' 0;
-            return 204;
-        }
-        add_header 'Access-Control-Allow-Origin' '*';
-        add_header 'Access-Control-Allow-Credentials' 'true';
-        add_header 'Access-Control-Allow-Methods' 'GET, PUT, POST, DELETE, OPTIONS';
-        add_header 'Access-Control-Allow-Headers' '*';
-        # No caching HTML files (not versioned)
+    # Turn off caching for files that are not (currently) versioned
+    location ~* \.(html|css|js)$ {
         expires -1;
-    }
-
-    # Javascript files get CORS headers
-    location ~* \.js {
-        if ($request_method = 'OPTIONS') {
-            add_header 'Access-Control-Allow-Origin' '*';
-            add_header 'Access-Control-Allow-Credentials' 'true';
-            add_header 'Access-Control-Allow-Methods' 'GET, PUT, POST, DELETE, OPTIONS';
-            add_header 'Access-Control-Allow-Headers' '*';
-            add_header 'Access-Control-Max-Age' 3600; # 1 hour
-            add_header 'Content-Type' 'text/plain charset=UTF-8';
-            add_header 'Content-Length' 0;
-            return 204;
-        }
-        add_header 'Access-Control-Allow-Origin' '*';
-        add_header 'Access-Control-Allow-Credentials' 'true';
-        add_header 'Access-Control-Allow-Methods' 'GET, PUT, POST, DELETE, OPTIONS';
-        add_header 'Access-Control-Allow-Headers' '*';
     }
 }
 
-# Regular Configuration for load-balanced settings
+# Regular Configuration for external access, with SSL/TLS
 server {
     listen 80;
     listen 443 ssl;
-    server_name *.voxtechnica.info;
+
+    server_name appraisers.voxtechnica.info;
+
     ssl_certificate /etc/ssl/certs/appraisers.voxtechnica.info.chained.crt;
     ssl_certificate_key /etc/ssl/private/voxtechnica.key;
-    root /var/www/appraisers;
-    index index.html;
 
-    # Provide a health check
-    location /status {
-        stub_status on;
-        access_log off;
-        allow 10.0.0.0/8;
-        allow 192.168.0.0/16;
-        allow 127.0.0.1/32;
-        deny all;
+    if ($scheme = http) {
+        return 301 https://$server_name$request_uri;
     }
 
-    # Last try: redirect to index
+    root /var/www/appraisers;
+
+    # Last try: redirect a bare / to index.html
     location / {
-        # Redirect non-SSL traffic ( X_Forwarded_Proto != HTTPS )
-        if ($http_x_forwarded_proto != 'https') {
-            rewrite ^ https://$host$request_uri? permanent;
-        }
-        # Provide CORS headers
-        if ($request_method = 'OPTIONS') {
-            add_header 'Access-Control-Allow-Origin' '*';
-            add_header 'Access-Control-Allow-Credentials' 'true';
-            add_header 'Access-Control-Allow-Methods' 'GET, PUT, POST, DELETE, OPTIONS';
-            add_header 'Access-Control-Allow-Headers' '*';
-            add_header 'Access-Control-Max-Age' 3600; # 1 hour
-            add_header 'Content-Type' 'text/plain charset=UTF-8';
-            add_header 'Content-Length' 0;
-            return 204;
-        }
-        add_header 'Access-Control-Allow-Origin' '*';
-        add_header 'Access-Control-Allow-Credentials' 'true';
-        add_header 'Access-Control-Allow-Methods' 'GET, PUT, POST, DELETE, OPTIONS';
-        add_header 'Access-Control-Allow-Headers' '*';
-        # Redirect a bare / to index.html
         index index.html;
     }
 
     # Forward API calls, documentation
     location ~* ^/(v1/|docs|api-docs|swagger/).*$ {
-        # Redirect non-SSL traffic ( X_Forwarded_Proto != HTTPS )
-        if ($http_x_forwarded_proto != 'https') {
-            rewrite ^ https://$host$request_uri? permanent;
-        }
-        # Set maximum file upload size
         client_max_body_size 21M;
-        # Proxy to the API
         proxy_pass http://localhost:8080;
         proxy_redirect off;
     }
 
-    # HTML files get CORS headers and no-cache
-    location ~* \.html$ {
-        # Redirect non-SSL traffic ( X_Forwarded_Proto != HTTPS )
-        if ($http_x_forwarded_proto != 'https') {
-            rewrite ^ https://$host$request_uri? permanent;
-        }
-        # Provide CORS headers
-        if ($request_method = 'OPTIONS') {
-            add_header 'Access-Control-Allow-Origin' '*';
-            add_header 'Access-Control-Allow-Credentials' 'true';
-            add_header 'Access-Control-Allow-Methods' 'GET, PUT, POST, DELETE, OPTIONS';
-            add_header 'Access-Control-Allow-Headers' '*';
-            add_header 'Access-Control-Max-Age' 3600; # 1 hour
-            add_header 'Content-Type' 'text/plain charset=UTF-8';
-            add_header 'Content-Length' 0;
-            return 204;
-        }
-        add_header 'Access-Control-Allow-Origin' '*';
-        add_header 'Access-Control-Allow-Credentials' 'true';
-        add_header 'Access-Control-Allow-Methods' 'GET, PUT, POST, DELETE, OPTIONS';
-        add_header 'Access-Control-Allow-Headers' '*';
-        # No caching HTML files (not versioned)
+    # Turn off caching for files that are not (currently) versioned
+    location ~* \.(html|css|js)$ {
         expires -1;
     }
-
-    # Javascript files get CORS headers
-    location ~* \.js {
-        # Redirect non-SSL traffic ( X_Forwarded_Proto != HTTPS )
-        if ($http_x_forwarded_proto != 'https') {
-            rewrite ^ https://$host$request_uri? permanent;
-        }
-        # Provide CORS headers
-        if ($request_method = 'OPTIONS') {
-            add_header 'Access-Control-Allow-Origin' '*';
-            add_header 'Access-Control-Allow-Credentials' 'true';
-            add_header 'Access-Control-Allow-Methods' 'GET, PUT, POST, DELETE, OPTIONS';
-            add_header 'Access-Control-Allow-Headers' '*';
-            add_header 'Access-Control-Max-Age' 3600; # 1 hour
-            add_header 'Content-Type' 'text/plain charset=UTF-8';
-            add_header 'Content-Length' 0;
-            return 204;
-        }
-        add_header 'Access-Control-Allow-Origin' '*';
-        add_header 'Access-Control-Allow-Credentials' 'true';
-        add_header 'Access-Control-Allow-Methods' 'GET, PUT, POST, DELETE, OPTIONS';
-        add_header 'Access-Control-Allow-Headers' '*';
-    }
-
 }
