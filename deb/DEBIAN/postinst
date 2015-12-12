@@ -1,0 +1,20 @@
+#!/bin/bash
+# Ensure that nginx has access to the web files
+chown -R www-data:www-data /var/www
+# Disable the default site if it exists
+if [ -e /etc/nginx/sites-enabled/default ]; then
+    rm /etc/nginx/sites-enabled/default
+fi
+# Enable the service if it isn't already
+if ! systemctl is-enabled nginx.service >/dev/null; then
+    echo "Enabling nginx"
+    systemctl enable nginx.service
+fi
+# Start the service if it's not running
+if ! systemctl is-active nginx.service >/dev/null; then
+    echo "Starting nginx"
+    systemctl start nginx.service
+else
+    echo "Reloading nginx"
+    systemctl reload nginx.service
+fi

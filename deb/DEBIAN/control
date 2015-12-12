@@ -1,0 +1,7 @@
+Package: voxtechnica-appraiser-web
+Section: main
+Priority: optional
+Architecture: amd64
+Depends: nginx
+Maintainer: VoxTechnica <admin@voxtechnica.info>
+Description: Appraiser Service Web Application
