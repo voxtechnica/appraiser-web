@@ -1,0 +1,771 @@
+---
+name: results
+url: /results
+---
+<div class="grid-block">
+    <div class="grid-content nav" style="padding: 0; width: 100%;">
+        <div class="menu-group primary">      
+            <ul class="menu-bar primary large-hortizontal medium-horizontal small-vertical">
+                <li><a ui-sref="home">Home</a></li>
+                <li><a ui-sref="home.aboutContainer">About</a></li>
+                <li><a ui-sref="data-profile">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="grid-block align-center resultsContainer ">
+		<div class="grid-content medium-3 small-12 sideSearch show-for-medium">
+				<form>
+					<h3 class="searchHeading">Search the most up to date database of appraisers opperating in the US.</h3>
+					<div class="grid-block">
+						<div class="grid-content medium-12 small-12">
+							<label>
+								Search by name
+								<input placeholder="Last name, First name" type="text">
+							</label>
+						</div>
+						<div class="grid-content medium-12 small-12">
+							<label>
+								Search by Company Name
+								<input placeholder="Company Name" type="text">
+							</label>
+						</div>
+						<div class="grid-content medium-12">
+							<label>
+								Search by Address
+								<input placeholder="2016 Church Street Springfield, NY 11413" type="text">
+							</label>
+						</div>
+						<div class=" medium-12 grid-content">
+							<label>
+								County
+								<input placeholder="County" type="text">
+							</label>
+						</div>
+						<div class="small-12 medium-6 grid-content">
+							<label>State</label>
+								<select name="" id="">
+									<option value="">AL</option>
+									<option value="">AK</option>
+									<option value="">AZ</option>
+									<option value="">AR</option>
+									<option value="">CA</option>
+									<option value="">CO</option>
+									<option value="">CT</option>
+									<option value="">DE</option>
+									<option value="">FL</option>
+									<option value="">GA</option>
+									<option value="">HI</option>
+									<option value="">ID</option>
+									<option value="">IL</option>
+									<option value="">IN</option>
+									<option value="">IA</option>
+									<option value="">KS</option>
+									<option value="">KY</option>
+									<option value="">LA</option>
+									<option value="">ME</option>
+									<option value="">MD</option>
+									<option value="">MA</option>
+									<option value="">MI</option>
+									<option value="">MN</option>
+									<option value="">MS</option>
+									<option value="">MO</option>
+									<option value="">MT</option>
+									<option value="">NE</option>
+									<option value="">NV</option>
+									<option value="">NH</option>
+									<option value="">NJ</option>
+									<option value="">NM</option>
+									<option value="">NY</option>
+									<option value="">NC</option>
+									<option value="">ND</option>
+									<option value="">OH</option>
+									<option value="">OK</option>
+									<option value="">OR</option>
+									<option value="">PA</option>
+									<option value="">RI</option>
+									<option value="">SC</option>
+									<option value="">SD</option>
+									<option value="">TN</option>
+									<option value="">TX</option>
+									<option value="">UT</option>
+									<option value="">VT</option>
+									<option value="">VA</option>
+									<option value="">WA</option>
+									<option value="">WV</option>
+									<option value="">WI</option>
+									<option value="">WY</option>			
+								</select>
+						</div>
+						<div class="small-12 medium-6 grid-content">
+							<label>Zip Code</label>
+								<input placeholder="Enter Zip Code" type="text">
+						</div>
+						<div class="medium-6 grid-content">
+							<label>Telephone Number</label>
+								<input placeholder="Enter Telephone Number" type="text">
+						</div>
+						<div class=" medium-6 grid-content">
+							<label>License Number</label>
+								<input placeholder="License Number" type="text">
+						</div>
+						<div class="small-12 medium-6 grid-content">
+							<label>Search by License Type</label>
+								<select name="" id="">
+									<option value="">Unspecified</option>
+									<option value="">State Trainee Appraiser</option>
+									<option value="">State Registered Appraiser </option>
+									<option value="">State Licensed Appraiser</option>
+									<option value="">State Certified Residential Appraiser</option>
+									<option value="">State Certified General Appraiser</option>
+								</select>
+						</div>
+						<div class="small-12 medium-4 grid-content">
+							<label>Status</label>
+								<select name="" id="">
+									<option value="">Active</option>
+									<option value="">Inactive</option>
+								</select>
+						</div>
+						<div class="medium-6 grid-content">
+							<label>Effective Date</label>
+								<input placeholder="10/12/2012" type="text">
+						</div>
+						<div class="small-12 medium-6 grid-content">
+							<label>Conforms to AQB Criteria</label>
+							<input id="checkbox1" type="checkbox"><label for="checkbox1">Yes</label>
+							<input id="checkbox2" type="checkbox"><label for="checkbox2">No</label>
+						</div>
+						<div class="medium-12 grid-content">
+							<a class="expand button" ui-sref="results">Search</a>
+						</div>
+					</div>
+				</form>
+		</div>
+	<div class="grid-content medium-5 small-12 resultsContainer">		
+
+		<div class="listResults">	
+			<div class="tableCont" id="tableContTop">	
+				<table class="profileTable">
+				<h3>Here are your search results for ""</h3>
+					<tr class="oddRow">
+						<td class="tdLabel dataName">
+							<p>Name</p>
+						</td>
+						<td class="tData">
+							<p>Jean Logan</p>	
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>Licensing State</p>
+						</td>
+						<td class="tData">
+							<p>CA</p>
+						</td>
+					</tr>
+					<tr class="oddRow">
+						<td class="tdLabel">
+							<p>License Number</p>
+						</td>
+						<td class="tData">
+							<p>F658-01</p>
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>License Type</p>
+						</td>
+						<td class="tData">
+							<p>General</p>
+						</td>
+					</tr>
+					<tr class="oddRow">
+						<td class="tdLabel">
+							<p>Effective Date</p>
+						</td>
+						<td class="tData">
+							<p>10/24/2013</p>
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>Expiration Date</p>
+						</td>
+						<td class="tData">
+							<p>10/24/2016</p>
+						</td>
+					</tr>
+					<tr class="oddRow">	
+						<td class="tdLabel">
+							<p>Status</p>
+						</td>
+						<td class="tData tdStatus">
+							<p>Current</p>
+						</td>
+					</tr>				
+				</table>
+				<a class="button expand" ui-sref="data-profile">Click to view full profile</a>
+			</div>
+
+			<div class="tableCont">	
+				<table class="profileTable">
+					<tr class="oddRow">
+						<td class="tdLabel dataName">
+							<p>Name</p>
+						</td>
+						<td class="tData">
+							<p>Jean Logan</p>	
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>Licensing State</p>
+						</td>
+						<td class="tData">
+							<p>CA</p>
+						</td>
+					</tr>
+					<tr class="oddRow">
+						<td class="tdLabel">
+							<p>License Number</p>
+						</td>
+						<td class="tData">
+							<p>F658-01</p>
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>License Type</p>
+						</td>
+						<td class="tData">
+							<p>General</p>
+						</td>
+					</tr>
+					<tr class="oddRow">
+						<td class="tdLabel">
+							<p>Effective Date</p>
+						</td>
+						<td class="tData">
+							<p>10/24/2013</p>
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>Expiration Date</p>
+						</td>
+						<td class="tData">
+							<p>10/24/2016</p>
+						</td>
+					</tr>
+					<tr class="oddRow">	
+						<td class="tdLabel">
+							<p>Status</p>
+						</td>
+						<td class="tData tdStatus">
+							<p>Current</p>
+						</td>
+					</tr>	
+				</table>
+				<a class="button expand" ui-sref="data-profile">Click to view full profile</a>
+			</div>
+
+			<div class="tableCont">	
+				<table class="profileTable">
+					<tr class="oddRow">
+						<td class="tdLabel dataName">
+							<p>Name</p>
+						</td>
+						<td class="tData">
+							<p>Jean Logan</p>	
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>Licensing State</p>
+						</td>
+						<td class="tData">
+							<p>CA</p>
+						</td>
+					</tr>
+					<tr class="oddRow">
+						<td class="tdLabel">
+							<p>License Number</p>
+						</td>
+						<td class="tData">
+							<p>F658-01</p>
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>License Type</p>
+						</td>
+						<td class="tData">
+							<p>General</p>
+						</td>
+					</tr>
+					<tr class="oddRow">
+						<td class="tdLabel">
+							<p>Effective Date</p>
+						</td>
+						<td class="tData">
+							<p>10/24/2013</p>
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>Expiration Date</p>
+						</td>
+						<td class="tData">
+							<p>10/24/2016</p>
+						</td>
+					</tr>
+					<tr class="oddRow">	
+						<td class="tdLabel">
+							<p>Status</p>
+						</td>
+						<td class="tData tdStatus">
+							<p>Current</p>
+						</td>
+					</tr>	
+				</table>
+				<a class="button expand" ui-sref="data-profile">Click to view full profile</a>
+			</div>
+
+			<div class="tableCont">	
+				<table class="profileTable">
+					<tr class="oddRow">
+						<td class="tdLabel dataName">
+							<p>Name</p>
+						</td>
+						<td class="tData">
+							<p>Jean Logan</p>	
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>Licensing State</p>
+						</td>
+						<td class="tData">
+							<p>CA</p>
+						</td>
+					</tr>
+					<tr class="oddRow">
+						<td class="tdLabel">
+							<p>License Number</p>
+						</td>
+						<td class="tData">
+							<p>F658-01</p>
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>License Type</p>
+						</td>
+						<td class="tData">
+							<p>General</p>
+						</td>
+					</tr>
+					<tr class="oddRow">
+						<td class="tdLabel">
+							<p>Effective Date</p>
+						</td>
+						<td class="tData">
+							<p>10/24/2013</p>
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>Expiration Date</p>
+						</td>
+						<td class="tData">
+							<p>10/24/2016</p>
+						</td>
+					</tr>
+					<tr class="oddRow">	
+						<td class="tdLabel">
+							<p>Status</p>
+						</td>
+						<td class="tData tdStatus">
+							<p>Current</p>
+						</td>
+					</tr>
+				</table>
+				<a class="button expand" ui-sref="data-profile">Click to view full profile</a>
+			</div>
+
+			<div class="tableCont">	
+				<table class="profileTable">
+					<tr class="oddRow">
+						<td class="tdLabel dataName">
+							<p>Name</p>
+						</td>
+						<td class="tData">
+							<p>Jean Logan</p>	
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>Licensing State</p>
+						</td>
+						<td class="tData">
+							<p>CA</p>
+						</td>
+					</tr>
+					<tr class="oddRow">
+						<td class="tdLabel">
+							<p>License Number</p>
+						</td>
+						<td class="tData">
+							<p>F658-01</p>
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>License Type</p>
+						</td>
+						<td class="tData">
+							<p>General</p>
+						</td>
+					</tr>
+					<tr class="oddRow">
+						<td class="tdLabel">
+							<p>Effective Date</p>
+						</td>
+						<td class="tData">
+							<p>10/24/2013</p>
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>Expiration Date</p>
+						</td>
+						<td class="tData">
+							<p>10/24/2016</p>
+						</td>
+					</tr>
+					<tr class="oddRow">	
+						<td class="tdLabel">
+							<p>Status</p>
+						</td>
+						<td class="tData tdStatus">
+							<p>Current</p>
+						</td>
+					</tr>
+				</table>
+				<a class="button expand" ui-sref="data-profile">Click to view full profile</a>
+			</div>
+
+			<div class="tableCont">	
+				<table class="profileTable">
+					<tr class="oddRow">
+						<td class="tdLabel dataName">
+							<p>Name</p>
+						</td>
+						<td class="tData">
+							<p>Jean Logan</p>	
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>Licensing State</p>
+						</td>
+						<td class="tData">
+							<p>CA</p>
+						</td>
+					</tr>
+					<tr class="oddRow">
+						<td class="tdLabel">
+							<p>License Number</p>
+						</td>
+						<td class="tData">
+							<p>F658-01</p>
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>License Type</p>
+						</td>
+						<td class="tData">
+							<p>General</p>
+						</td>
+					</tr>
+					<tr class="oddRow">
+						<td class="tdLabel">
+							<p>Effective Date</p>
+						</td>
+						<td class="tData">
+							<p>10/24/2013</p>
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>Expiration Date</p>
+						</td>
+						<td class="tData">
+							<p>10/24/2016</p>
+						</td>
+					</tr>
+					<tr class="oddRow">	
+						<td class="tdLabel">
+							<p>Status</p>
+						</td>
+						<td class="tData tdStatus">
+							<p>Current</p>
+						</td>
+					</tr>
+				</table>
+				<a class="button expand" ui-sref="data-profile">Click to view full profile</a>
+			</div>
+
+			<div class="tableCont">	
+				<table class="profileTable">
+					<tr class="oddRow">
+						<td class="tdLabel dataName">
+							<p>Name</p>
+						</td>
+						<td class="tData">
+							<p>Jean Logan</p>	
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>Licensing State</p>
+						</td>
+						<td class="tData">
+							<p>CA</p>
+						</td>
+					</tr>
+					<tr class="oddRow">
+						<td class="tdLabel">
+							<p>License Number</p>
+						</td>
+						<td class="tData">
+							<p>F658-01</p>
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>License Type</p>
+						</td>
+						<td class="tData">
+							<p>General</p>
+						</td>
+					</tr>
+					<tr class="oddRow">
+						<td class="tdLabel">
+							<p>Effective Date</p>
+						</td>
+						<td class="tData">
+							<p>10/24/2013</p>
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>Expiration Date</p>
+						</td>
+						<td class="tData">
+							<p>10/24/2016</p>
+						</td>
+					</tr>
+					<tr class="oddRow">	
+						<td class="tdLabel">
+							<p>Status</p>
+						</td>
+						<td class="tData tdStatus">
+							<p>Current</p>
+						</td>
+					</tr>
+				</table>
+				<a class="button expand" ui-sref="data-profile">Click to view full profile</a>
+			</div>
+
+			<div class="tableCont">	
+				<table class="profileTable">
+					<tr class="oddRow">
+						<td class="tdLabel dataName">
+							<p>Name</p>
+						</td>
+						<td class="tData">
+							<p>Jean Logan</p>	
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>Licensing State</p>
+						</td>
+						<td class="tData">
+							<p>CA</p>
+						</td>
+					</tr>
+					<tr class="oddRow">
+						<td class="tdLabel">
+							<p>License Number</p>
+						</td>
+						<td class="tData">
+							<p>F658-01</p>
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>License Type</p>
+						</td>
+						<td class="tData">
+							<p>General</p>
+						</td>
+					</tr>
+					<tr class="oddRow">
+						<td class="tdLabel">
+							<p>Effective Date</p>
+						</td>
+						<td class="tData">
+							<p>10/24/2013</p>
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>Expiration Date</p>
+						</td>
+						<td class="tData">
+							<p>10/24/2016</p>
+						</td>
+					</tr>
+					<tr class="oddRow">	
+						<td class="tdLabel">
+							<p>Status</p>
+						</td>
+						<td class="tData tdStatus">
+							<p>Current</p>
+						</td>
+					</tr>
+				</table>
+				<a class="button expand" ui-sref="data-profile">Click to view full profile</a>
+			</div>
+
+			<div class="tableCont">	
+				<table class="profileTable">
+					<tr class="oddRow">
+						<td class="tdLabel dataName">
+							<p>Name</p>
+						</td>
+						<td class="tData">
+							<p>Jean Logan</p>	
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>Licensing State</p>
+						</td>
+						<td class="tData">
+							<p>CA</p>
+						</td>
+					</tr>
+					<tr class="oddRow">
+						<td class="tdLabel">
+							<p>License Number</p>
+						</td>
+						<td class="tData">
+							<p>F658-01</p>
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>License Type</p>
+						</td>
+						<td class="tData">
+							<p>General</p>
+						</td>
+					</tr>
+					<tr class="oddRow">
+						<td class="tdLabel">
+							<p>Effective Date</p>
+						</td>
+						<td class="tData">
+							<p>10/24/2013</p>
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>Expiration Date</p>
+						</td>
+						<td class="tData">
+							<p>10/24/2016</p>
+						</td>
+					</tr>
+					<tr class="oddRow">	
+						<td class="tdLabel">
+							<p>Status</p>
+						</td>
+						<td class="tData tdStatus">
+							<p>Current</p>
+						</td>
+					</tr>
+				</table>
+				<a class="button expand" ui-sref="data-profile">Click to view full profile</a>
+			</div>
+
+			<div class="tableCont">	
+				<table class="profileTable">
+					<tr class="oddRow">
+						<td class="tdLabel dataName">
+							<p>Name</p>
+						</td>
+						<td class="tData">
+							<p>Jean Logan</p>	
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>Licensing State</p>
+						</td>
+						<td class="tData">
+							<p>CA</p>
+						</td>
+					</tr>
+					<tr class="oddRow">
+						<td class="tdLabel">
+							<p>License Number</p>
+						</td>
+						<td class="tData">
+							<p>F658-01</p>
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>License Type</p>
+						</td>
+						<td class="tData">
+							<p>General</p>
+						</td>
+					</tr>
+					<tr class="oddRow">
+						<td class="tdLabel">
+							<p>Effective Date</p>
+						</td>
+						<td class="tData">
+							<p>10/24/2013</p>
+						</td>
+					</tr>
+					<tr class="evenRow">
+						<td class="tdLabel">
+							<p>Expiration Date</p>
+						</td>
+						<td class="tData">
+							<p>10/24/2016</p>
+						</td>
+					</tr>
+					<tr class="oddRow">	
+						<td class="tdLabel">
+							<p>Status</p>
+						</td>
+						<td class="tData tdStatus">
+							<p>Current</p>
+						</td>
+					</tr>
+				</table>
+				<a class="button expand" ui-sref="data-profile">Click to view full profile</a>
+			</div>
+	</div>				
+</div>
+

@@ -1,0 +1,417 @@
+//GLOBAL
+body {
+
+	color: $body-font-color;
+	letter-spacing: .7px
+}
+p {
+	letter-spacing: 1px;
+}
+h3 {
+	font-weight: bold;
+
+}
+//Pseudo Classes
+a {
+    .button {
+		@extend %radius;
+
+		&:hover {
+			@extend %hover;
+		}
+		&:visited {
+			background: $color-hover;
+		}
+	}	
+
+}
+
+
+label > input[type="text"], label > input[type="password"], label > input[type="date"], label > input[type="datetime"], label > input[type="datetime-local"], label > input[type="month"], label > input[type="week"], label > input[type="email"], label > input[type="number"], label > input[type="search"], label > input[type="tel"], label > input[type="time"], label > input[type="url"], label > input[type="color"], label > textarea {
+	@extend %radius;
+}
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
+	@extend %radius;
+
+}
+.inline-label > a, .inline-label > button, .inline-label > input[type="button"], .inline-label > input[type="submit"] {
+	@extend %radius;
+}
+select {
+	@extend %radius;	
+}
+.button {
+	@extend %radius;
+	font-weight: bold;
+}
+table {
+	margin: 0;
+	padding: 0;
+}
+
+//HEADER
+
+.header {
+
+	.headerLeft {
+		h1 {
+			padding: 15% 0 0 10%;
+			font-weight: bold;
+			color: $tertiary-color;
+
+		}
+	}
+
+	.headerRight {
+
+		.signupLogin {
+			margin: 5% 0 0 0;
+			width: 100%;
+		}
+		.globalSearch {
+			margin: 0;
+			padding-top: 3%;
+			width: 100%;
+
+		}
+		ul li {
+			padding: 0 3% 0 3%;
+			display: inline;
+			float: right;
+
+		}
+		ul li a {
+			border-radius: 0 5px 5px 0;
+			color: $body-font-color;
+		}
+		.header-label > input[type="Search"] {
+			border-radius: 5px 0 0 5px;	
+		}
+		.button {
+			color: #fff;
+		}
+	}
+}
+//NAV
+
+.nav {
+	background: $tertiary-color;
+//	border-bottom: 2px solid $light;	
+	
+	.menu-group.primary {
+		padding-right: 2em;
+		background: $tertiary-color;
+		float: right;
+	
+		.menu-bar {
+			background: $tertiary-color;
+
+			
+			li > a {
+				padding: 1.2em 1em;
+				color: $light;
+				font-size: 1.1em;			
+			}
+			li > a:hover {
+				@extend %hover;
+			}		
+		}	
+	}
+}
+//RESPONSIVE NAV
+.responsiveNav {
+	.grid-content {
+		margin: 0;
+		padding: 0;	
+
+		.responsiveMenu {
+
+			background: $primary-color;
+			height: 3em;
+		}
+		.ocMenu {
+			padding: 2% 0 2% 20%;
+			background: $primary-color;
+
+			.ocMenu a > .iconic {
+				margin: 0;
+				color: $light;
+			}
+		}
+	}
+}
+//HOME
+.homeContainer {
+
+	background-image: url('../img/buildings.jpg');
+	background-repeat: no-repeat;
+	background-position: -400px 100px -200px;	
+
+	
+	.homeMain {
+
+
+		h1 {
+			padding: 10% 0 0 10%;
+			font-size: 4em;
+			color: $light;
+			font-weight: bold;
+			line-height: 110%;
+			@extend %text-shadow;
+		}
+		h3 {
+			padding-left: 10%;
+			font-size: 2.5em;
+			color: $light;
+			font-weight: bold;
+			line-height: 110%;
+			@extend %text-shadow;			
+		}
+		.button {
+			margin: 10%;
+			padding: 1.2em;
+			width: 30%;
+			background-color: $primary-color;		
+			color: #fff;
+			font-size: 1.5em;
+		}
+	}
+
+	.homeSide {
+
+		.homeSearchWrap {
+			margin: 20% 20% 30% 5%;
+			background: $tint;
+			border-radius: 12px;
+			border: 1px solid $tertiary-color;			
+			}
+
+		.homeSearch {
+			padding: 11%;
+			
+			.homeSearchHeading {
+				margin-bottom: 1.6em;
+				width: 60%;
+				background-color: $primary-color;
+				@extend %radius;
+
+				h3 {
+				padding: .75em;
+				font-size: 1.5em;
+				text-align: center;
+				font-weight: bold;					
+				color: $light;
+				}
+			}		
+			.button {
+				margin-top: 5%;
+				background-color: $tertiary-color;
+				color: #fff;
+			}
+			input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
+				border: 1px solid $tertiary-color;
+			}
+		}
+		.advancedSearch {
+
+			.modalFormWrap {
+				margin: 5%;
+				border: 1px solid $tertiary-color;
+				@extend %radius;
+			}
+			
+			a {
+				color: $tertiary-color;				
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+			.advancedSearchHeading {
+					margin: 2.7%;
+					padding: 3%;	
+					@extend %radius;
+					background-color: $primary-color;
+					text-align: center;
+					color: $light;	
+			}
+			label {
+				color: $body-font-color;
+			}
+			.button {
+				margin-top: 0 ;
+				background: $tertiary-color;
+				color: $light;
+				&:hover {
+					@extend %hover;
+				}
+			}
+			a.close-button {
+				color: $tertiary-color;
+				text-decoration: none;
+			}
+		}		
+	}
+}
+//SEARCH
+
+
+.searchHeading {
+		padding: 4%;	
+		border-radius: 5px 5px 0  0;
+		text-align: center;
+		color: $light;
+		line-height: 120%;
+}
+//Side Search
+.sideSearch {
+	border-radius: 8px 8px 0  0;
+	border: 2px solid $tint;
+	background: $primary-color;
+
+	.button {
+		background-color: #fff;		
+		color: $body-font-color;
+		font-size: 1.2em;
+		padding: 2.5%;
+			&:hover {
+			text-decoration: underline;
+			}
+	}
+	label {
+		color: #fff;
+	}
+}
+
+//ABOUT
+
+.aboutContainer {
+	@extend %container-margin;
+	text-align: center;
+		
+		.aboutCont1 {
+			background: $tertiary-color;
+			h3 {
+				color: $light;
+				padding: 5%;
+			}
+		}
+		.aboutCont2 {
+			height: 8em;
+
+		}
+		.aboutCont3 {
+			height: 8em;
+
+		}
+		.aboutCont4 {
+			height: 8em;
+
+		}
+}
+
+//RESULTS
+
+.resultsContainer {
+	@extend %container-margin;
+
+	#resultsHeader {
+		padding-top: 5%;
+	}
+}
+//DATA PROFILE
+.dataProfileCont {
+	@extend %container-margin;
+}
+
+//Table Styles
+#tableContTop {
+	padding-top: 0;
+}
+.tableCont {
+	height: 100%;
+	padding-top: 5%;
+	
+	h3 {
+
+		padding: 3%;
+		@extend %table-border;
+		border-radius: 8px 8px 0  0;
+		background: $primary-color;
+		color: $light;
+	}
+
+	.button {
+		margin-top: .3em;
+		background-color: $tertiary-color;
+		border-radius: 0;
+		@extend %table-border;
+		font-weight: bold;
+		font-size: 1em;
+			&:hover {
+				background: #18486d;
+				text-decoration: underline;
+			}
+		}
+
+		.profileTable {
+			@extend %table;
+			
+			tr {
+				@extend %table-border;
+			}
+			.oddRow {
+
+			}
+			.evenRow {
+				background-color: $tint;
+			}
+		}
+
+		.tdLabel {
+			width: 30%;
+			background: $secondary-color;
+
+
+			p  {
+				margin: 0;
+				padding: 4%;
+				color: #fff;
+				font-weight: bold;	
+			}
+			th td {
+				border: 1px solid $light;
+			}
+		}
+		.tdStatus {
+			p {
+				color: red;
+			} 
+		}
+		.dataName {
+			font-weight: bold;
+		}
+		.tData {
+			width: 70%;
+				
+			p {
+				margin: 0;
+				padding-left: 5%;
+			}
+		}	
+}
+
+
+//MEDIA QUERIES
+@media screen and (max-width: 640px) {
+
+	.resultsContainer {
+		width: 100%;
+	}
+}
+@media screen and (max-width: 840px) {
+	.homeMain h1 {
+		color: red;
+		font-size: 16px;
+	}
+
+}

@@ -1,0 +1,308 @@
+---
+name: home
+url: /
+---
+
+<div class="grid-block">
+    <div class="grid-content nav" style="padding: 0; width: 100%;">
+        <div class="menu-group primary">      
+            <ul class="menu-bar primary large-hortizontal medium-horizontal small-vertical">
+                <li><a ui-sref="home">Home</a></li>
+                <li><a ui-sref="home.aboutContainer">About</a></li>
+                <li><a ui-sref="data-profile">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+	<div class="grid-block homeContainer align-spaced">
+	 
+		<div class="medium-8 small-12 grid-content homeMain show-for-medium">
+			<h1>Search the most up to date and reliable database of appraisers operating in the United States.</h1>
+			<h3>Some more things and stuff...</h3>
+			<a href="" class="button">Sign up and receive.. </a>	
+		</div>
+
+		<div class="large-4 medium-6 small-12 grid-content homeSide">
+			<div class="homeSearchWrap">
+			<form class="homeSearch">
+				<div class="grid-block">
+					<div class="grid-content small-12 homeSearchHeading">
+						<h3>Find an Appraiser</h3>
+					</div>
+					<div class="grid-content medium-12">
+						<label>
+							Search by name
+							<input placeholder="Last name, First name" type="text">
+						</label>
+					</div>
+					<div class="grid-content medium-12">
+						<label>
+							Search by Address
+							<input placeholder="2016 Church Street Springfield, NY 11413" type="text">
+						</label>
+					</div>
+					<div class="small-12 medium-6 grid-content">
+						<label>
+							Search by County
+							<input placeholder="County" type="text">
+						</label>
+					</div>
+					<div class="small-12 medium-6 grid-content">
+						<label>Search by State</label>
+							<select name="" id="">
+								<option value="">AL</option>
+								<option value="">AK</option>
+								<option value="">AZ</option>
+								<option value="">AR</option>
+								<option value="">CA</option>
+								<option value="">CO</option>
+								<option value="">CT</option>
+								<option value="">DE</option>
+								<option value="">FL</option>
+								<option value="">GA</option>
+								<option value="">HI</option>
+								<option value="">ID</option>
+								<option value="">IL</option>
+								<option value="">IN</option>
+								<option value="">IA</option>
+								<option value="">KS</option>
+								<option value="">KY</option>
+								<option value="">LA</option>
+								<option value="">ME</option>
+								<option value="">MD</option>
+								<option value="">MA</option>
+								<option value="">MI</option>
+								<option value="">MN</option>
+								<option value="">MS</option>
+								<option value="">MO</option>
+								<option value="">MT</option>
+								<option value="">NE</option>
+								<option value="">NV</option>
+								<option value="">NH</option>
+								<option value="">NJ</option>
+								<option value="">NM</option>
+								<option value="">NY</option>
+								<option value="">NC</option>
+								<option value="">ND</option>
+								<option value="">OH</option>
+								<option value="">OK</option>
+								<option value="">OR</option>
+								<option value="">PA</option>
+								<option value="">RI</option>
+								<option value="">SC</option>
+								<option value="">SD</option>
+								<option value="">TN</option>
+								<option value="">TX</option>
+								<option value="">UT</option>
+								<option value="">VT</option>
+								<option value="">VA</option>
+								<option value="">WA</option>
+								<option value="">WV</option>
+								<option value="">WI</option>
+								<option value="">WY</option>								
+							</select>
+					</div>
+					<div class="small-12 medium-6 grid-content">
+						<label>Search by License Number</label>
+							<input placeholder="License Number" type="text">
+					</div>
+					<div class="small-12 medium-6 grid-content">
+						<label>Search by License Type</label>
+							<select name="" id="">
+							<option value="">Unspecified</option>
+							<option value="">State Trainee Appraiser</option>
+							<option value="">State Registered Appraiser </option>
+							<option value="">State Licensed Appraiser</option>
+							<option value="">State Certified Residential Appraiser</option>
+							<option value="">State Certified General Appraiser</option>
+							</select>
+					</div>
+					<div class="medium-12 grid-content">
+						<a class="expand button" ui-sref="results">Search</a>
+					</div>
+
+<!--MODAL-->
+					<div class="medium-12 grid-content advancedSearch">
+						<a zf-open="basicModal">Advanced Search</a>
+						<div zf-modal="" id="basicModal">
+							<a zf-close="" class="close-button">×</a>
+							<div class="modalFormWrap">							
+							<form>
+								<h3 class="advancedSearchHeading">Adavanced Search</h3>
+								<div class="grid-block">
+									<div class="grid-content medium-12 small-12">
+										<label>
+											Search by name
+											<input placeholder="Last name, First name" type="text">
+										</label>
+									</div>
+								</div>
+								<div class="grid-block">
+									<div class="grid-content medium-12 small-12">
+										<label>
+											Search by Company Name
+											<input placeholder="Company Name" type="text">
+										</label>
+									</div>
+								</div>
+								<div class="grid-block">
+									<div class="grid-content medium-12">
+										<label>
+											Search by Address
+											<input placeholder="2016 Church Street Springfield, NY 11413" type="text">
+										</label>
+									</div>
+								</div>
+								<div class="grid-block">
+									<div class="small-12 medium-6 grid-content">
+										<label>
+											Search by County
+											<input placeholder="County" type="text">
+										</label>
+									</div>
+									<div class="small-12 medium-6 grid-content">
+										<label>Search by State</label>
+											<select name="" id="">
+												<option value="">AL</option>
+												<option value="">AK</option>
+												<option value="">AZ</option>
+												<option value="">AR</option>
+												<option value="">CA</option>
+												<option value="">CO</option>
+												<option value="">CT</option>
+												<option value="">DE</option>
+												<option value="">FL</option>
+												<option value="">GA</option>
+												<option value="">HI</option>
+												<option value="">ID</option>
+												<option value="">IL</option>
+												<option value="">IN</option>
+												<option value="">IA</option>
+												<option value="">KS</option>
+												<option value="">KY</option>
+												<option value="">LA</option>
+												<option value="">ME</option>
+												<option value="">MD</option>
+												<option value="">MA</option>
+												<option value="">MI</option>
+												<option value="">MN</option>
+												<option value="">MS</option>
+												<option value="">MO</option>
+												<option value="">MT</option>
+												<option value="">NE</option>
+												<option value="">NV</option>
+												<option value="">NH</option>
+												<option value="">NJ</option>
+												<option value="">NM</option>
+												<option value="">NY</option>
+												<option value="">NC</option>
+												<option value="">ND</option>
+												<option value="">OH</option>
+												<option value="">OK</option>
+												<option value="">OR</option>
+												<option value="">PA</option>
+												<option value="">RI</option>
+												<option value="">SC</option>
+												<option value="">SD</option>
+												<option value="">TN</option>
+												<option value="">TX</option>
+												<option value="">UT</option>
+												<option value="">VT</option>
+												<option value="">VA</option>
+												<option value="">WA</option>
+												<option value="">WV</option>
+												<option value="">WI</option>
+												<option value="">WY</option>			
+											</select>
+									</div>
+								</div>
+								<div class="grid-block">
+									<div class="small-12 medium-6 grid-content">
+										<label>Search by Zip Code</label>
+											<input placeholder="Enter Zip Code" type="text">
+									</div>
+
+									<div class="small-12 medium-6 grid-content">
+										<label>Search by Telephone Number</label>
+											<input placeholder="Enter Telephone Number" type="text">
+									</div>
+								</div>
+								<div class="grid-block">
+									<div class="small-12 medium-6 grid-content">
+										<label>Search by License Number</label>
+											<input placeholder="License Number" type="text">
+									</div>
+									<div class="small-12 medium-6 grid-content">
+										<label>Search by License Type</label>
+											<select name="" id="">
+												<option value="">Unspecified</option>
+												<option value="">State Trainee Appraiser</option>
+												<option value="">State Registered Appraiser </option>
+												<option value="">State Licensed Appraiser</option>
+												<option value="">State Certified Residential Appraiser</option>
+												<option value="">State Certified General Appraiser</option>
+											</select>
+									</div>
+								</div>
+								<div class="grid-block">
+									<div class="small-12 medium-6 grid-content">
+										<label>Effective Date</label>
+											<input placeholder="10/24/2013" type="text">
+									</div>
+									<div class="small-12 medium-6 grid-content">
+										<label>Expiration Date</label>
+											<input placeholder="10/24/2013" type="text">
+									</div>
+								</div>
+								<div class="grid-block">
+									<div class="small-12 medium-6 grid-content">
+										<label>Status</label>
+											<select name="" id="">
+												<option value="">Active</option>
+												<option value="">Inactive</option>
+											</select>
+									</div>
+									<div class="small-12 medium-6 grid-content">
+										<label>Conforms to AQB Criteria</label>
+										<input id="checkbox1" type="checkbox"><label for="checkbox1">Yes</label>
+										<input id="checkbox2" type="checkbox"><label for="checkbox2">No</label>
+									</div>
+								</div>
+
+								<div class="grid-block">
+									<div class="medium-12 grid-content">
+										<a class="expand button" ui-sref="results">Search</a>
+									</div>
+								</div>
+							</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		</div>
+	</div>
+
+	<div class="grid-block aboutContainer">
+			<div class="grid-content medium-12 aboutCont1">
+				<div class="grid-container">
+					<h3>VoxTechnica is one of the most dependable and up to date databases of apparaisers opperating in the United States. Our app shows you everything from...</h3>
+				</div>
+			</div>
+			<div class="grid-content medium-4 small-12 aboutCont2">
+				
+			</div>
+			<div class="grid-content medium-4 small-12 aboutCont3">
+				
+			</div>
+			<div class="grid-content medium-4 small-12 aboutCont4">
+				
+			</div>
+		</div>
+	</div>
+
+
+
+
