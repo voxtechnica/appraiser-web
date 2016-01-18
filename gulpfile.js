@@ -46,7 +46,7 @@ var paths = {
   appJS: [
     'client/assets/js/app.js'
   ]
-}
+};
 
 // 3. TASKS
 // - - - - - - - - - - - - - - -
@@ -63,7 +63,6 @@ gulp.task('copy', function() {
   })
     .pipe(gulp.dest('./build'))
   ;
-
 });
 
 // Copies your app's page templates and generates URLs for them
@@ -121,7 +120,7 @@ gulp.task('sass', function () {
 });
 
 // Compiles and copies the Foundation for Apps JavaScript, as well as your app's custom JS
-gulp.task('uglify', ['uglify:foundation', 'uglify:app'])
+gulp.task('uglify', ['uglify:foundation', 'uglify:app']);
 
 gulp.task('uglify:foundation', function(cb) {
   var uglify = $.if(isProduction, $.uglify()

@@ -1,6 +1,13 @@
 {
-  "name": "foundation-apps-template",
-  "version": "1.2.0",
+  "name": "voxtechnica-appraiser-web",
+  "version": "1.0.0",
+  "description": "VoxTechnica Real Estate Appraiser Service",
+  "homepage": "https://appraisers.voxtechnica.info",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/voxtechnica/appraiser-web.git"
+  },
   "scripts": {
     "start": "gulp",
     "build": "gulp build --production"

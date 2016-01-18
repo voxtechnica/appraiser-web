@@ -15,11 +15,10 @@ It also provides a demonstration of the following packages and frameworks workin
 
 Once you've got NodeJS, Git, and Ruby installed on your system, you can run the following commands to set up your development environment for this application:
 
-Install Foundation for Apps and a bunch of dependencies:
+Install Bower and Gulp if you don't already have them:
 
 ```bash
-npm install -g foundation-cli bower gulp
-gem install bundler
+npm install -g bower gulp
 ```
 
 Build the web application in the project folder (e.g. appraiser-web):

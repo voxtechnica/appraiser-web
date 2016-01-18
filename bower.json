@@ -1,20 +1,16 @@
 {
-  "name": "foundation-apps-template",
-  "version": "1.2.0",
-  "authors": [
-    "ZURB"
-  ],
-  "description": "Template project for Foundation for Apps by ZURB.",
-  "main": "gulpfile.js",
-  "keywords": [
-    "framework",
-    "angular",
-    "web",
-    "apps"
-  ],
+  "name": "voxtechnica-appraiser-web",
+  "description": "VoxTechnica Real Estate Appraiser Service",
+  "homepage": "https://appraisers.voxtechnica.info",
   "license": "MIT",
-  "homepage": "http://foundation.zurb.com",
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/voxtechnica/appraiser-web.git"
+  },
+  "main": "gulpfile.js",
+  "dependencies": {
+    "foundation-apps": "~1.2.0"
+  },
   "ignore": [
     "**/.*",
     "node_modules",
@@ -22,7 +18,5 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "foundation-apps": "~1.2.0"
-  }
+  "private": true
 }
